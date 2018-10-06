@@ -1,0 +1,48 @@
+.touchable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.touchable-opacity {
+  @extend .touchable;
+  &:hover {
+    opacity: .7;
+  }
+  &:active {
+    opacity: .5;
+  }
+}
+
+.touchable-highlight {
+  @extend .touchable;
+  position: relative;
+  overflow: hidden;
+  * { z-index: 1; }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0;
+    transition: opacity .2s;
+  }
+  &:hover::after {
+    opacity: .07;
+  }
+  &:active::after {
+    opacity: .1;
+  }
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+small {
+  font-size: 10px;
+}
