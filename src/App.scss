@@ -1,5 +1,8 @@
-@import "./lib/common";
 @import "./lib/variables";
+@import "./lib/media-queries";
+@import "./lib/common";
+@import "./lib/sidebar";
+@import "./lib/account-widget";
 
 .app {
   text-align: center;
@@ -7,113 +10,9 @@
   display: grid;
   grid-template-columns: $sidebar-width auto;
   font-family: 'Khula', sans-serif;
-}
-
-.sidebar {
-  display: grid;
-  grid-template-rows: 60px auto;
-  height: 100vh;
-  .sidebar-head {
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0 10px;
-    .sidebar-avatar {
-      height: 30px;
-      width: 30px;
-      border-radius: 30px;
-      border: 1px solid #FAD961;
-      img {
-        height: inherit;
-        width: inherit;
-      }
-    }
-    .sidebar-title {
-      font-weight: bold;
-      font-size: 14px;
-    }
-  }
-  .sidebar-body {
-    background: $blue-gradient;
-    overflow-y: auto;
-    padding: 10px 0;
-    .sidebar-item {
-      @extend .flex-row;
-      justify-content: space-between;
-      font-weight: bold;
-      font-size: 14px;
-      color: white;
-      padding: 14px 30px;
-      padding-right: 50px;
-      .sidebar-icon {
-        padding-right: 10px;
-      }
-      .sidebar-arrow-down {
-        fill: white;
-      }
-    }
-  }
-}
-
-.account-widget {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: white;
-  border: 1px solid rgba(189, 189, 189, 0.25);
-  box-shadow: 0px 7.08823px 35.4412px rgba(0, 0, 0, 0.07);
-  border-radius: 7.08823px;
-  width: $sidebar-width - 10px;
-  min-height: 200px;
-  max-height: 90vh;
-  z-index: 100;
-  margin: 5px;
-  display: grid;
-  grid-template-rows: 40px auto;
-  .account-widget-head {
-    font-size: 12px;
-    font-weight: 600;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px 10px;
-    img {
-      padding-right: 10px;
-    }
-    .material-icons {
-      font-size: 15px;
-      color: $grey;
-    }
-  }
-  .account-widget-body {
-    padding: 10px;
-    .account-widget-item {
-      border-radius: 5px;
-      font-weight: bold;
-      padding: 10px;
-      font-size: 14px;
-      margin-bottom: 5px;
-      @extend .flex-row;
-      justify-content: space-between;
-      >img {
-        display: none;
-      }
-      &.active {
-        color: white;
-        background-color: $blue;
-        >img { display: block; }
-      }
-      &:last-of-type {
-        color: $blue;
-      }
-    }
-    hr {
-      border: 1px solid #EEEEEE;
-      border-bottom: none;
-    }
+  @include respond-below(md) {
+    grid-template-columns: auto;
+    grid-template-rows: 70px auto;
   }
 }
 
