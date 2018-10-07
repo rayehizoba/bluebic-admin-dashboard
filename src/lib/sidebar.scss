@@ -58,11 +58,14 @@
       left: 0;
       right: 0;
       bottom: 0;
+      opacity: 1;
+      transition: opacity .3s ease;
       >div {
         overflow: auto;
       }
       &.hide {
-        display: none;
+        opacity: 0;
+        pointer-events: none;
       }
     }
     .sidebar-body-mobile-head {

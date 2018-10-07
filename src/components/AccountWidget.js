@@ -5,6 +5,7 @@ import plus from '../assets/plus.svg';
 import logout from '../assets/logout.svg';
 import profile from '../assets/profile.svg';
 import { observer, inject } from 'mobx-react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default inject('uiStore')(
   observer(
@@ -18,7 +19,15 @@ export default inject('uiStore')(
           return null;
         }
         return (
-          <div className="account-widget" >
+          <ReactCSSTransitionGroup
+            transitionName="opacity-transition"
+            transitionAppear={true}
+            transitionAppearTimeout={500}
+            component="div"
+            className="account-widget"
+            transitionEnter={false}
+            transitionLeave={false}
+          >
             <div className="account-widget-head" >
               <div className="flex-row" >
                 <img src={bluebicLogo} alt="" />
@@ -28,7 +37,7 @@ export default inject('uiStore')(
                 <i className="material-icons">close</i>
               </div>
             </div>
-    
+      
             <div className="account-widget-body" >
               {this.uiStore.schools.map(s => (
                 <div key={s.name} className={"account-widget-item touchable-highlight " + (s.active ? 'active' : '')}
@@ -61,7 +70,7 @@ export default inject('uiStore')(
                 </div>
               </div>
             </div>
-          </div>
+          </ReactCSSTransitionGroup>
         )
       }
       onSelectSchool = (school) => {

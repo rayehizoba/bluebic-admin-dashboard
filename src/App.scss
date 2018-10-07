@@ -19,3 +19,12 @@
 .container {
   background: $lightgrey;
 }
+
+.opacity-transition-appear {
+  opacity: 0;
+}
+
+.opacity-transition-appear.opacity-transition-appear-active {
+  opacity: 1;
+  transition: opacity .6s;
+}
