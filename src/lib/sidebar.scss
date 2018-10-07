@@ -60,6 +60,7 @@
       bottom: 0;
       opacity: 1;
       transition: opacity .3s ease;
+      height: 100vh;
       >div {
         overflow: auto;
       }
@@ -82,7 +83,7 @@
         width: 40px;
         border-radius: 40px;
         border: 2px solid white;
-        margin: 10px;
+        margin-right: 10px;
         background-color: #EEE;
         overflow: hidden;
       }
@@ -101,10 +102,11 @@
       padding: 14px 30px;
       padding-right: 50px;
       @include respond-below(md) {
-        font-size: 20px;
+        font-size: 16px;
       }
       .sidebar-icon {
         padding-right: 10px;
+        width: 18px;
       }
       .sidebar-arrow-down {
         fill: white;

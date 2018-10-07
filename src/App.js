@@ -114,9 +114,12 @@ export default class App extends Component {
             </div>
             {/* ROW 5 */}
             <div className="row" >
-              <div className="flex-row" >
-                <img src={newspaper} alt="" style={{ marginRight: 15 }} />
-                <p className="row-title" >ASSESSMENTS</p>
+              <div className="flex-row space-between" >
+                <div className="flex-row" >
+                  <img src={newspaper} alt="" style={{ marginRight: 15 }} />
+                  <p className="row-title" >ASSESSMENTS</p>
+                </div>
+                <div className="button" >View all</div>
               </div>
               <div className="row-5" >
                 <div className="card" ></div>
