@@ -17,8 +17,6 @@
   }
 }
 
-$row-title-height: 30px;
-
 .container {
   background: $lightgrey;
   padding: 30px;
@@ -70,7 +68,7 @@ $row-title-height: 30px;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-column-gap: 20px;
-    grid-template-rows: calc(1fr - $row-title-height) repeat(2, 1fr);
+    grid-template-rows: 1.4fr repeat(2, 1fr);
     grid-row-gap: 10px;
     padding-bottom: 30px;
     .row {
