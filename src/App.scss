@@ -3,6 +3,7 @@
 @import "./lib/common";
 @import "./lib/sidebar";
 @import "./lib/account-widget";
+@import "./lib/absent-students-widget";
 
 .app {
   text-align: center;
@@ -28,15 +29,6 @@
     display: grid;
     grid-template-rows: $row-title-height auto;
     padding-bottom: 30px;
-    .row-title {
-      font-weight: 300;
-      font-size: 10px;
-      text-transform: uppercase;
-    }
-    .row-title-grey {
-      @extend .row-title;
-      color: $grey;
-    }
     .row-icon-box {
       padding: 10px;
       border-radius: 5px;
@@ -44,6 +36,7 @@
       height: 50px;
       @extend .flex-row;
       justify-content: center;
+      flex-grow: 0;
     }
     .card {
       @extend .flex-row;
@@ -58,10 +51,6 @@
       grid-template-columns: auto;
       grid-template-rows: repeat(3, 1fr);
       grid-row-gap: 10px;
-    }
-    .row-h2 {
-      color: $deepblue;
-      font-weight: bold;
     }
   }
   .row-2 {
@@ -84,11 +73,15 @@
     @include respond-below(md) {
       grid-template-columns: auto;
       grid-template-rows: repeat(3, auto);
+      .row:first-child .card {
+        height: 300px;
+        padding: 10px 0;
+      }
     }
   }
   .row-3 {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 2.5fr;
     grid-column-gap: 20px;
     @include respond-below(md) {
       grid-template-columns: auto;
@@ -144,4 +137,40 @@
   color: $blue;
   font-size: 10px;
   font-weight: bold;
+}
+
+.legend-container {
+  @extend .flex-row;
+  .legend-key {
+    width: 50px;
+    height: 0;
+    border: #EFEFEF solid 1.5px;
+    border-radius: 1.5px;
+    @include respond-below(md) {
+      width: 30px;
+    }
+    &.dashed {
+      border-width: 0.5px;
+      border-style: dashed;
+    }
+  }
+  .legend-text {
+    font-size: 12px;
+    padding: 0 20px;
+    @include respond-below(md) {
+      font-size: 10px;
+      padding: 0 10px;
+    }
+  }
+}
+
+.chart-tooltip {
+  background: #FFFFFF;
+  border: 0.852923px solid rgba(140, 160, 179, 0.2);
+  box-shadow: 0px 6.8066px 25.5248px rgba(151, 151, 151, 0.14);
+  border-radius: 2.55877px;
+  padding: 10px;
+  color: $blue;
+  font-weight: bold;
+  font-size: 12px;
 }
