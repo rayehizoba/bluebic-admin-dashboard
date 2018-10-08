@@ -4,6 +4,7 @@
   height: 100vh;
   @include respond-below(md) {
     grid-template-rows: 70px;
+    height: auto;
   }
   .sidebar-head {
     background-color: white;
@@ -115,7 +116,7 @@
     }
   }
   hr {
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: .5px solid rgba(255, 255, 255, 0.4);
     margin: 10px 20px;
     @include respond-below(md) {
       margin: 0 20px;

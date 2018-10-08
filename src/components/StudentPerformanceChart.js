@@ -22,7 +22,7 @@ export default class StudentPerformanceChart extends React.Component {
   }
   render() {
     return (
-      <ResponsiveContainer >
+      <ResponsiveContainer height={280} >
         <LineChart data={this.data}
           margin={{ top: 15, left: 30, right: 30 }}
         >
