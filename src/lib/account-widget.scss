@@ -13,6 +13,7 @@
   margin: 5px;
   display: grid;
   grid-template-rows: 40px auto;
+  overflow: auto;
   .account-widget-head {
     font-size: 12px;
     font-weight: 600;

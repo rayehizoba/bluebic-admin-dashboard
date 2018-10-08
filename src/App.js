@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'antd/lib/popover/style/index.css';
 import './App.scss';
 import Sidebar from './components/Sidebar';
 import AccountWidget from './components/AccountWidget';
@@ -17,12 +18,33 @@ import megaphone from './assets/megaphone.svg';
 import newspaper from './assets/newspaper.svg';
 import arrowDownFat from './assets/arrow-down-fat.svg';
 import arrowUp from './assets/arrow-up.svg';
+import search from './assets/search.svg';
+import not from './assets/not.svg';
+import avatar from './assets/avatar.svg';
+import logoutWhite from './assets/logout-white.svg';
+import arrowDownGrey from './assets/arrow-down-grey.svg';
 import StudentPerformanceChart from './components/StudentPerformanceChart';
 import Colors from './lib/colors';
 import {
   LineChart, Line, ResponsiveContainer
 } from 'recharts';
 import AbsentStudentsWidget from './components/AbsentStudentsWidget';
+import { Popover } from 'antd';
+import AbsentStudentsTable from './components/AbsentStudentsTable';
+
+const popoverContent = (
+  <div className="" >
+    <div className="clear-button" >
+      <img src={user} alt="" style={{ paddingRight: 10 }} />
+      <span >Profile Settings</span>
+    </div>
+    <hr />
+    <div className="blue-button" >
+      <img src={logoutWhite} alt="" style={{ paddingRight: 10 }} />
+      <span >Logout</span>
+    </div>
+  </div>
+);
 
 export default class App extends Component {
   constructor(props) {
@@ -33,27 +55,33 @@ export default class App extends Component {
       { name: 'Pending', amount: 'N600,000.00', icon: sandClock, color: Colors.yellow },
     ]
     this.generalStatsData = [
-      { name: 'students', amount: '50,000', actionText: 'view reports', trend: 4, data: [
-      {name: 'Page A', uv: 4000, pv: 2400, amt: 2400},
-      {name: 'Page B', uv: 3000, pv: 1398, amt: 2210},
-      {name: 'Page C', uv: 2000, pv: 9800, amt: 2290},
-      {name: 'Page D', uv: 2780, pv: 3908, amt: 2000},
-      {name: 'Page E', uv: 1890, pv: 4800, amt: 2181},
-] },
-      { name: 'parents', amount: '15,000', actionText: 'view list', trend: 13, data: [
-      {name: 'Page A', uv: 4000, pv: 2400, amt: 2400},
-      {name: 'Page B', uv: 3000, pv: 1398, amt: 2210},
-      {name: 'Page C', uv: 2000, pv: 9800, amt: 2290},
-      {name: 'Page D', uv: 2780, pv: 3908, amt: 2000},
-      {name: 'Page E', uv: 1890, pv: 4800, amt: 2181},
-] },
-      { name: 'teachers', amount: '5,000', actionText: 'view list', trend: -12, data: [
-      {name: 'Page A', uv: 4000, pv: 2400, amt: 2400},
-      {name: 'Page B', uv: 3000, pv: 1398, amt: 2210},
-      {name: 'Page C', uv: 2000, pv: 9800, amt: 2290},
-      {name: 'Page D', uv: 2780, pv: 3908, amt: 2000},
-      {name: 'Page E', uv: 1890, pv: 4800, amt: 2181},
-] },
+      { name: 'students', amount: '50,000', actionText: 'view reports', trend: 4, 
+        data: [
+          {name: 'Page A', pv: 10},
+          {name: 'Page B', pv: 5},
+          {name: 'Page C', pv: 12},
+          {name: 'Page D', pv: 8},
+          {name: 'Page E', pv: 18},
+        ]
+      },
+      { name: 'parents', amount: '15,000', actionText: 'view list', trend: 13,
+        data: [
+          {name: 'Page A', pv: 6},
+          {name: 'Page B', pv: 10},
+          {name: 'Page C', pv: 9},
+          {name: 'Page D', pv: 20},
+          {name: 'Page E', pv: 23},
+        ]
+      },
+      { name: 'teachers', amount: '5,000', actionText: 'view list', trend: -12,
+        data: [
+          {name: 'Page A', pv: 10},
+          {name: 'Page B', pv: 20},
+          {name: 'Page C', pv: 12},
+          {name: 'Page D', pv: 17},
+          {name: 'Page E', pv: 5},
+        ]
+      },
     ]
   }
   render() {
@@ -63,6 +91,35 @@ export default class App extends Component {
           <AccountWidget />
           <Sidebar />
           <div className="container" >
+            {/* TOOLBAR */}
+            <div className="toolbar" >
+              <div className="searchbar" >
+                <img src={search} alt="" />
+                <input type="text" />
+              </div>
+              <div className="flex-row" >
+                <div className="notifications has-badge" >
+                  <img src={not} alt="" />
+                </div>
+                <Popover
+                  content={popoverContent}
+                  trigger="click"
+                  placement="bottomRight"
+                  overlayClassName="popover"
+                >
+                  <div className="flex-row flex-end touchable-opacity" >
+                    <div className="flex-col" >
+                      <span >Ukauwa David</span>
+                      <small >dukauwa.du@gmail.com</small>
+                    </div>
+                    <div className="avatar" >
+                      <img src={avatar} alt="" />
+                    </div>
+                    <img src={arrowDownGrey} alt="" />
+                  </div>
+                </Popover>
+              </div>
+            </div>
             {/* ROW 1 */}
             <div className="row" >
               <div className="flex-row" >
@@ -112,7 +169,7 @@ export default class App extends Component {
                 <div className="card" >
                   <AbsentStudentsWidget />
                 </div>
-                <div className="card" ></div>
+                <AbsentStudentsTable />
               </div>
             </div>
             {/* ROW 4 */}

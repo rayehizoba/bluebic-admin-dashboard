@@ -4,9 +4,9 @@
 @import "./lib/sidebar";
 @import "./lib/account-widget";
 @import "./lib/absent-students-widget";
+@import "./lib/absent-students-table";
 
 .app {
-  text-align: center;
   height: 100vh;
   display: grid;
   grid-template-columns: $sidebar-width auto;
@@ -18,12 +18,72 @@
   }
 }
 
+.searchbar {
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid rgba(189, 189, 189, 0.25);
+  box-shadow: 0px 2px 9px rgba(196, 196, 196, 0.11);
+  border-radius: 3px;
+  display: grid;
+  grid-template-columns: 50px auto;
+  align-items: center;
+  img {
+    padding: 0 15px;
+  }
+  input {
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: $grey;
+  }
+}
+
 .container {
   background: $lightgrey;
-  padding: 30px;
+  padding: 20px 30px;
   overflow: auto;
   @include respond-below(md) {
     padding: 10px;
+  }
+  .toolbar {
+    display: grid;
+    grid-template-columns: 2.6fr 1fr;
+    grid-column-gap: 30px;
+    padding-bottom: 30px;
+    @include respond-below(md) {
+      display: none;
+    }
+    .notifications {
+      @extend .touchable-opacity;
+      position: relative;
+      padding: 0 10px;
+      &.has-badge::after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 8px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $blue-gradient;
+      }
+    }
+    .avatar {
+      margin: 0 15px;
+      padding: 5px;
+      background: $blue-gradient;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      @extend .flex-row;
+      flex-grow: 0;
+      justify-content: center;
+    }
+    small {
+      color: grey;
+      font-style: italic;
+    }
   }
   .row {
     display: grid;
@@ -32,8 +92,8 @@
     .row-icon-box {
       padding: 10px;
       border-radius: 5px;
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       @extend .flex-row;
       justify-content: center;
       flex-grow: 0;
@@ -85,7 +145,7 @@
     grid-column-gap: 20px;
     @include respond-below(md) {
       grid-template-columns: auto;
-      grid-row-gap: 20px;
+      grid-row-gap: 5px;
     }
   }
   .row-4 {
@@ -173,4 +233,8 @@
   color: $blue;
   font-weight: bold;
   font-size: 12px;
+}
+
+.popover .ant-popover-inner-content {
+  padding: 10px;
 }

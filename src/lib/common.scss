@@ -1,6 +1,7 @@
 .touchable {
   cursor: pointer;
   user-select: none;
+  transition: all .1s ease-in;
 }
 
 .touchable-opacity {
@@ -71,6 +72,9 @@ small {
 .space-between {
   justify-content: space-between;
 }
+.flex-end {
+  justify-content: flex-end;
+}
 .align-center {
   align-items: center;
 }
@@ -96,5 +100,32 @@ small {
   font-weight: 700;
   @include respond-below(md) {
     font-size: 24px;
+  }
+}
+
+hr {
+  border: 1px solid #EEEEEE;
+  border-bottom: none;
+  margin: 10px 0;
+  @include respond-below(md) {
+    margin: 0 20px;
+  }
+}
+
+.clear-button {
+  @extend .touchable-highlight;
+  @extend .flex-row;
+  justify-content: center;
+  border-radius: 3px;
+  font-weight: 400;
+  padding: 5px 15px;
+}
+
+.blue-button {
+  @extend .clear-button;
+  background: $blue;
+  color: white;
+  img {
+    width: 18px;
   }
 }
