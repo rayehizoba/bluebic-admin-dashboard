@@ -12,7 +12,7 @@
   }
   >div {
     display: grid;
-    grid-template-columns: auto 75px;
+    grid-template-columns: auto 100px;
     @include respond-below(md) {
       grid-template-columns: auto 50px;
     }

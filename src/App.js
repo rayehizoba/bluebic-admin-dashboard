@@ -31,6 +31,8 @@ import {
 import AbsentStudentsWidget from './components/AbsentStudentsWidget';
 import { Popover } from 'antd';
 import AbsentStudentsTable from './components/AbsentStudentsTable';
+import Announcements from './components/Announcements';
+import Accessments from './components/Accessments';
 
 const popoverContent = (
   <div className="" >
@@ -193,7 +195,7 @@ export default class App extends Component {
                   <img src={megaphone} alt="" style={{ marginRight: 15 }} />
                   <p className="title" >Announcements</p>
                 </div>
-                <div className="card flat" ></div>
+                <Announcements />
               </div>
             </div>
             {/* ROW 5 */}
@@ -203,10 +205,10 @@ export default class App extends Component {
                   <img src={newspaper} alt="" style={{ marginRight: 15 }} />
                   <p className="title" >ASSESSMENTS</p>
                 </div>
-                <div className="button" >View all</div>
+                <div className="button hide-below-md" >View all</div>
               </div>
               <div className="row-5" >
-                <div className="card" ></div>
+                <Accessments />
               </div>
             </div>
           </div>

@@ -5,9 +5,10 @@
 @import "./lib/account-widget";
 @import "./lib/absent-students-widget";
 @import "./lib/absent-students-table";
+@import "./lib/announcements-widget";
+@import "./lib/accessments-widget";
 
 .app {
-  height: 100vh;
   display: grid;
   grid-template-columns: $sidebar-width auto;
   font-family: 'Khula', sans-serif;
@@ -15,6 +16,9 @@
   @include respond-below(md) {
     grid-template-columns: auto;
     grid-template-rows: 70px auto;
+  }
+  @include respond-above(md) {
+    height: 100vh;
   }
 }
 

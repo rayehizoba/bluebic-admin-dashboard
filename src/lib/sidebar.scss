@@ -53,7 +53,7 @@
     z-index: 10;
     @include respond-below(md) {
       display: grid;
-      grid-template-rows: 90px auto 120px;
+      grid-template-rows: 60px auto 120px;
       padding: 0;
       position: fixed;
       top: 0;
@@ -80,6 +80,7 @@
       color: white;
       padding: 10px;
       line-height: 20px;
+      overflow: hidden;
       .avatar {
         height: 40px;
         width: 40px;
@@ -91,7 +92,10 @@
       }
       .username {
         font-weight: bold;
-        font-size: 18px;
+        font-size: 16px;
+      }
+      .email {
+        font-size: 12px;
       }
     }
     .sidebar-item {
@@ -103,9 +107,6 @@
       color: white;
       padding: 14px 30px;
       padding-right: 50px;
-      @include respond-below(md) {
-        font-size: 16px;
-      }
       .sidebar-icon {
         padding-right: 10px;
         width: 18px;

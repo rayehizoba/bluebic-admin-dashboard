@@ -39,7 +39,7 @@ export default inject('uiStore')(
                   </div>
                   <div className="flex-col" >
                     <span className="username" >Ukauwa David</span>
-                    <i >dukauwa.du@gmail.com</i>
+                    <i className="email" >dukauwa.du@gmail.com</i>
                   </div>
                 </div>
                 <div

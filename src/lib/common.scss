@@ -102,6 +102,17 @@ small {
     font-size: 24px;
   }
 }
+.h3 {
+  font-size: 18px;
+  font-weight: 500;
+  @include respond-below(md) {
+    font-size: 16px;
+  }
+}
+.caption {
+  font-size: 12px;
+  color: $grey;
+}
 
 hr {
   border: 1px solid #EEEEEE;
@@ -127,5 +138,11 @@ hr {
   color: white;
   img {
     width: 18px;
+  }
+}
+
+.hide-below-md {
+  @include respond-below(md) {
+    display: none !important;
   }
 }

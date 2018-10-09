@@ -1,0 +1,42 @@
+.announcements-widget {
+  height: 200px;
+  overflow: auto;
+  line-height: 1.5;
+  flex-direction: column !important;
+  @include respond-below(md) {
+    display: none !important;
+  }
+}
+.annoucement-item {
+  padding: 10px 15px;
+  border-bottom: .5px solid #EEE;
+  position: relative;
+  &.badge::after {
+    height: 8px;
+    width: 8px;
+    border-radius: 8px;
+    background: $blue-gradient;
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 0;
+  }
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+.announcements-widget-mobile {
+  @include respond-above(md) {
+    display: none;
+  }
+  .annoucement-item {
+    @extend .card;
+    flex-direction: column !important;
+    margin-bottom: 5px;
+    align-items: flex-start !important;
+    padding-left: 40px !important;
+    &.badge::after {
+      left: 20px;
+    }
+  }
+}
