@@ -1,0 +1,65 @@
+.recent-transactions-table {
+  display: grid;
+  grid-template-rows: 40px auto;
+  flex-grow: 1;
+  height: 100%;
+  .table-row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr;
+    height: 40px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    line-height: 1.7;
+    >div:last-child {
+      justify-self: flex-end;
+      align-items: flex-end;
+    }
+  }
+  .title {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .table-body {
+    overflow: auto;
+    font-size: 13px;
+    min-height: 100px;
+    max-height: 350px;
+    .table-row {
+      padding: 5px 0;
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+  @include respond-below(md) {
+    display: none;
+  }
+}
+.recent-transactions-card {
+  @extend .card;
+  @include respond-below(md) {
+    display: none !important;
+  }
+}
+.recent-transactions-table-mobile {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-row-gap: 5px;
+  @include respond-above(md) {
+    display: none;
+  }
+  .card {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 20px;
+    padding-left: 30px;
+    font-size: 13px;
+    line-height: 25px;
+    >div:first-child {
+      border-right: 1px solid #EEE;
+    }
+    >div:nth-child(2) {
+      text-align: center;
+    }
+  }
+}

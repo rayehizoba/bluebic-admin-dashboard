@@ -57,12 +57,12 @@ small {
 @include respond-below(md) {
   small {
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 400;
   }
 }
 
 .light-text {
-  font-weight: 300 !important;
+  font-weight: 400 !important;
 }
 
 .blue-text {
@@ -80,7 +80,7 @@ small {
 }
 
 .title {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 10px;
   text-transform: uppercase;
 }

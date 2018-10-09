@@ -7,11 +7,12 @@
 @import "./lib/absent-students-table";
 @import "./lib/announcements-widget";
 @import "./lib/accessments-widget";
+@import "./lib/recent-transactions-widget";
 
 .app {
   display: grid;
   grid-template-columns: $sidebar-width auto;
-  font-family: 'Khula', sans-serif;
+  font-family: 'Lato', sans-serif;
   color: #3B3B3B;
   @include respond-below(md) {
     grid-template-columns: auto;

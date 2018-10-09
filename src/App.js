@@ -33,6 +33,7 @@ import { Popover } from 'antd';
 import AbsentStudentsTable from './components/AbsentStudentsTable';
 import Announcements from './components/Announcements';
 import Accessments from './components/Accessments';
+import RecentTransactions from './components/RecentTransactions';
 
 const popoverContent = (
   <div className="" >
@@ -123,7 +124,7 @@ export default class App extends Component {
               </div>
             </div>
             {/* ROW 1 */}
-            <div className="row" >
+            {/* <div className="row" >
               <div className="flex-row" >
                 <img src={icon1} alt="" style={{ marginRight: 15 }} />
                 <p className="title" >STUDENT FEES</p>
@@ -144,9 +145,9 @@ export default class App extends Component {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
             {/* ROW 2 */}
-            <div className="row-2" >
+            {/* <div className="row-2" >
               <div className="row" >
                 <div className="flex-row space-between" >
                   <div className="flex-row" >
@@ -160,9 +161,9 @@ export default class App extends Component {
                 </div>
               </div>
               {this.renderGeneralStatistics()}
-            </div>
+            </div> */}
             {/* ROW 3 */}
-            <div className="row" >
+            {/* <div className="row" >
               <div className="flex-row" >
                 <img src={user} alt="" style={{ marginRight: 15 }} />
                 <p className="title" >ABSENT STUDENTS</p>
@@ -173,7 +174,7 @@ export default class App extends Component {
                 </div>
                 <AbsentStudentsTable />
               </div>
-            </div>
+            </div> */}
             {/* ROW 4 */}
             <div className="row-4" >
               <div className="row" >
@@ -188,7 +189,7 @@ export default class App extends Component {
                   <img src={buy} alt="" style={{ marginRight: 15 }} />
                   <p className="title" >RECENT TRANSACTIONS</p>
                 </div>
-                <div className="card" ></div>
+                <RecentTransactions />
               </div>
               <div className="row" >
                 <div className="flex-row" >
@@ -205,7 +206,7 @@ export default class App extends Component {
                   <img src={newspaper} alt="" style={{ marginRight: 15 }} />
                   <p className="title" >ASSESSMENTS</p>
                 </div>
-                <div className="button hide-below-md" >View all</div>
+                <div className="button hide-below-md" >VIEW ALL</div>
               </div>
               <div className="row-5" >
                 <Accessments />
