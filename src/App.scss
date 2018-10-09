@@ -8,6 +8,7 @@
 @import "./lib/announcements-widget";
 @import "./lib/accessments-widget";
 @import "./lib/recent-transactions-widget";
+@import "./lib/debtors-table";
 
 .app {
   display: grid;
@@ -92,7 +93,8 @@
   }
   .row {
     display: grid;
-    grid-template-rows: $row-title-height auto;
+    grid-template-rows: auto auto;
+    grid-row-gap: 5px;
     padding-bottom: 30px;
     .row-icon-box {
       padding: 10px;
@@ -160,7 +162,7 @@
     padding-bottom: 30px;
     @include respond-below(md) {
       grid-template-columns: auto;
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-rows: repeat(3, auto);
     }
     .row {
       padding: 0;

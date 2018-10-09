@@ -38,5 +38,8 @@
     &.badge::after {
       left: 20px;
     }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }

@@ -130,6 +130,7 @@ hr {
   border-radius: 3px;
   font-weight: 400;
   padding: 5px 15px;
+  flex-grow: 0;
 }
 
 .blue-button {
@@ -143,6 +144,11 @@ hr {
 
 .hide-below-md {
   @include respond-below(md) {
+    display: none !important;
+  }
+}
+.hide-above-md {
+  @include respond-above(md) {
     display: none !important;
   }
 }
